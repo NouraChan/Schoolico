@@ -2,8 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+    <div class="col-2">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="">Create a subject</a></li>
+            <li class="list-group-item"><a href="">Create your table</a></li>
+        </ul>
+    </div>
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
