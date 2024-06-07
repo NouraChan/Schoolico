@@ -5,7 +5,7 @@
     <div class="row">
     <div class="col-2">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="">Create a subject</a></li>
+            <li class="list-group-item"><a href="/subject/create">Create a subject</a></li>
             <li class="list-group-item"><a href="">Create your table</a></li>
         </ul>
     </div>
@@ -21,6 +21,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    @yield('content2')
                 </div>
             </div>
         </div>
