@@ -20,6 +20,12 @@ return new class extends Migration
             $table->foreign('subject_id')->references('id')->on('subject');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('subject_title');
+            $table->foreign('subject_title')->references('title')->on('subject');
+            $table->unsignedBigInteger('user_name');
+            $table->foreign('user_name')->references('name')->on('users');
+            $table->unsignedBigInteger('subject_code');
+            $table->foreign('subject_code')->references('code')->on('subject');
         });
     }
 

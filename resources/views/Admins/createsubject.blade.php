@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    @extends('../../home')
+    @extends('../home')
     @section('content2')
     <h1>Create a new subject for students to enroll in.</h1>
     <form action="{{route('subject.store')}}" method="POST">
