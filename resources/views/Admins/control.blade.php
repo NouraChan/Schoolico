@@ -10,7 +10,7 @@
 <body>
     @extends('../../home')
     @section('content2')
-    <h1>Create a new subject for students to enroll in.</h1>
+    <h1>Search for student</h1>
     <form action="{{route('subject.store')}}" method="POST">
         @csrf
         <div class="mt-3">

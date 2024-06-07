@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,13 @@ Route::group(['prefix' => 'subject'], function () {
     Route::get('/index', [SubjectController::class, 'index'])->name('subject.index');
     Route::post('/update', [SubjectController::class, 'update'])->name('subject.update');
     Route::get('/edit', [SubjectController::class, 'edit'])->name('subject.edit');
+});
 
-
+Route::group(['prefix' => 'schedule'], function () {
+    Route::get('/create', [ScheduleController::class, 'create'])->name('schedule.create');
+    Route::post('/store', [ScheduleController::class, 'store'])->name('schedule.store');
+    Route::delete('/destroy', [ScheduleController::class, 'destroy'])->name('schedule.destroy');
+    Route::get('/index', [ScheduleController::class, 'index'])->name('schedule.index');
+    Route::post('/update', [ScheduleController::class, 'update'])->name('schedule.update');
+    Route::get('/edit', [ScheduleController::class, 'edit'])->name('schedule.edit');
 });

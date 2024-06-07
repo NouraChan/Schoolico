@@ -9,8 +9,8 @@
 
 <body>
     @extends('../../home')
-    @section('header')
-    
+    @section('content2')
+  
     @endsection
 </body>
 
