@@ -19,7 +19,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
                     @yield('content2')
                 </div>
             </div>
