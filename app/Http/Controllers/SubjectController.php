@@ -19,7 +19,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.subject.create');
     }
 
     /**
@@ -27,7 +27,7 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
