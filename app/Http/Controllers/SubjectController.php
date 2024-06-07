@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subject;
+
 
 class SubjectController extends Controller
 {
@@ -11,7 +13,9 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subjects = Subject::all();
+
+        return view('admins.showsubject', ['subjects' => $subjects]);
     }
 
     /**
@@ -19,7 +23,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        return view('Admins.createsubject');
+        return view('admins.createsubject');
     }
 
     /**
@@ -27,7 +31,13 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        Subject::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'code' => $request->code
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -43,7 +53,8 @@ class SubjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $subject = Subject::findOrFail($id);
+        return view('admins.editsubject', ['subject' => $subject]);
     }
 
     /**
@@ -51,7 +62,14 @@ class SubjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $subject = Subject::findOrFail($id);
+        $subject->update([
+            'title' => $request->title,
+            'code' => $request->code,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('subject.index');
     }
 
     /**
@@ -59,6 +77,8 @@ class SubjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $subject = Subject::findOrFail($id);
+        $subject->delete();
+        return redirect()->back();
     }
 }
